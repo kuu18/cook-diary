@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    container_name: cook-diary
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: sh -c "npm run dev"
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
